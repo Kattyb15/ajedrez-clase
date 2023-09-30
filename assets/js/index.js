@@ -9,6 +9,9 @@ const imgPieza = document.getElementById("imgPieza");
 function buscar() {
     console.log("Entro a funcion buscar");
     const txtBusqueda = inputBusqueda.value;
+    if (txtBusqueda == "") {
+        alert("No hay criterio de busqueda");
+    }
     let resultado = piezas.find((pieza) => {
         return pieza.nombre.toLocaleLowerCase() == txtBusqueda.toLocaleLowerCase();
     });
@@ -33,3 +36,6 @@ inputBusqueda.addEventListener("keypress", (event) => {
         buscar();
     }
 });
+
+
+
